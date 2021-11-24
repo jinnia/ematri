@@ -6,7 +6,7 @@ const db = require('./app/models')
 const Role=db.role
 
 db.mongoose.connect(
-  `mongodb://localhost:27017/ematri`,
+  process.env.MONGO_CONNECT,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -20,7 +20,7 @@ db.mongoose.connect(
 })
 
 let corsOptions = {
-  origin:'http://localhost:3000'
+  origin:process.env.ORIGIN
 }
 
 
